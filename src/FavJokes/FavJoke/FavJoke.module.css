@@ -1,0 +1,99 @@
+.joke{
+    position: relative;
+width: 100%;
+min-height: 180px;
+
+
+background: #FFFFFF;
+border: 1px solid #F8F8F8;
+box-sizing: border-box;
+box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+border-radius: 10px;
+margin-top: 20px;
+        
+}
+
+
+    .content{
+        display:flex;
+        flex-direction: row;
+        width: 90%;
+        margin: 0 auto;
+        padding-top: 47px;
+    }
+    .jokeRightSide{
+        padding-left: 5px;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-around;
+        width: 85%;
+        
+    }
+    
+    .jokeLeftSide{
+    width: 15%;
+    }
+    
+    .linkTitle{
+    
+    font-family: Roboto;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 10px;
+    line-height: 14px;
+    color: #ABABAB;
+    }
+    
+    .link{
+        font-family: Roboto;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 10px;
+    line-height: 14px;
+        color: #8EA7FF;
+        cursor: pointer;
+    }
+    .text{
+        font-family: Roboto;
+        font-style: normal;
+        font-weight: normal;
+        font-size: 14px;
+        line-height: 20px;
+        padding-top: 5px;
+        padding-bottom: 25px;
+    
+    }
+    
+    .jokeFooterInfo{
+        font-family: Roboto;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 10px;
+    line-height: 14px;
+    color: #ABABAB;
+    padding-right: 3px;
+   
+    
+    }
+    
+    
+    .itemFooter{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    padding-bottom: 20px;
+    }
+  
+    
+    
+    .likeBtn{
+        position: absolute;
+        right: 20px;
+    top: 20px;
+    cursor: pointer;
+    }
+
+
+    .messageImg{
+        padding-top: 5px;
+    }

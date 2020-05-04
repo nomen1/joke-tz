@@ -1,0 +1,23 @@
+.favSide{
+    display: flex;
+    flex-direction: column;
+    background: #F8F8F8;
+    width: 90%;
+    margin: 0 auto;
+}
+
+.title{
+ 
+width: 84px;
+height: 28px;
+
+display: block;
+font-family: Roboto;
+font-style: normal;
+font-weight: 500;
+font-size: 20px;
+line-height: 28px;
+
+
+color: #ABABAB;
+}
