@@ -7,7 +7,7 @@
 .appContainer{
   display: flex;
   flex-direction: row;
-  height: 100vh;
+ 
 }
 .mainSide{
 width: 70%;

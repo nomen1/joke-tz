@@ -7,11 +7,24 @@ import FivSide from "../FavSide/FavSide"
 
 
 
+const App = () => {
+
+
+return(
+  <MainSide/>
+)
+ 
+
+   
+}
 
 
 
+export default App
 
 
+
+/*
 const App = () => {
 
 
@@ -27,17 +40,12 @@ const App = () => {
   return ( 
 
   
-<div className="App">{xs && <div className = {s.appContainer}> <MainSide/></div>}
-              {m && <div className = {s.appContainer}> <MainSide/></div>}
-              { md && <div className = {s.appContainer}> <MainSide/> <FivSide/></div>};
-
-        
-
+<div >{xs && <div className = {s.appContainer}> <MainSide/></div>}
+      {m && <div className = {s.appContainer}> <MainSide/></div>}
+      { md && <div className = {s.appContainer}> <MainSide/> <FivSide/></div>}
 
     
   </div>
-  );
-};
-
-
-export default App
+  )
+}
+*/

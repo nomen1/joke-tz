@@ -5,17 +5,20 @@
 }
 
 .appContainer{
-  display: flex;
-  flex-direction: row;
+
 }
 .mainSide{
-width: 70%;
+width: 100%;
 background: #FFFFFF;
+position: relative;
 }
-
+.middle{
+  width:100%
+}
 .mainSection{
-  width: 90%;
-  margin: 0 auto;
+  width: 65%;
+  margin-left: 50px;
+  margin-right: 50px;
   background: #FFFFFF;
   display:flex;
   flex-direction: column;
@@ -27,6 +30,16 @@ font-weight: bold;
 font-size: 20px;
 line-height: 28px;
 color: #333333;
+}
+.title{
+  
+  display: block;
+  font-family: Roboto;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 20px;
+  line-height: 28px;
+  color: #ABABAB;
 }
 .greetingTitle{
   font-family: Roboto;
@@ -41,6 +54,22 @@ font-style: normal;
 font-weight: 500;
 font-size: 24px;
 line-height: 44px;
+}
+
+.headerArea{
+  display: flex;
+flex-direction: row;
+justify-content: space-between;
+align-items: center;
+}
+.showMenu{
+  display: flex;
+  flex-direction: row;
+}
+.showMenuBtn{
+  display: flex;
+  align-self: center;
+  margin-right: 5px;
 }
 @media (min-width: 575.98px){
   .Appcontainer {
@@ -66,4 +95,10 @@ line-height: 44px;
   .Appcontainer {
     max-width: 1199px;
   }
+}
+
+
+.backdropp{
+  display: flex;
+  flex-direction: row;
 }
