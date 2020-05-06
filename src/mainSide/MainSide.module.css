@@ -15,13 +15,17 @@ position: relative;
 .middle{
   width:100%
 }
+
 .mainSection{
-  width: 65%;
-  margin-left: 50px;
-  margin-right: 50px;
+  width: 90%;
+  margin: 0 auto;
   background: #FFFFFF;
   display:flex;
   flex-direction: column;
+}
+.full{
+  width: 50%;
+    margin-left: 50px;
 }
 .sign{
   font-family: Roboto;

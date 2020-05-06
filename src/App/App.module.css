@@ -4,11 +4,7 @@
   margin: 5px;
 }
 
-.appContainer{
-  display: flex;
-  flex-direction: row;
- 
-}
+
 .mainSide{
 width: 70%;
 background: #FFFFFF;
@@ -45,29 +41,4 @@ font-style: normal;
 font-weight: 500;
 font-size: 24px;
 line-height: 44px;
-}
-@media (min-width: 575.98px){
-  .Appcontainer {
-    max-width: 575px;
-    margin: auto;
-    padding: 0;
-  }
-}
-
-@media (min-width: 767.98px){
-  .Appcontainer {
-    max-width: 767px;	
-  }
-}
-
-@media (min-width: 991.98px) {
-  .Appcontainer {
-    max-width: 991px;
-  }
-}
-
-@media (min-width: 1199.98px){
-  .Appcontainer {
-    max-width: 1199px;
-  }
 }

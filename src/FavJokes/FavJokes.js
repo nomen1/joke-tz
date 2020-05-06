@@ -4,14 +4,17 @@ import FavJoke from  "../FavJokes/FavJoke/FavJoke"
 import { deleteFromFavAC} from "../redux/appReducer";
 import {connect} from "react-redux";
 import useMediaQuery from "./../useMediaQueries"
+import hidden from "./../assets/images/hidden.png"
 
 const FavJokes = (props) => {
 
 
+  const md =  useMediaQuery("(min-width: 1200px)");
 
 
-
-
+  const menuClose = ()=>{
+    props.menuToOpen(false)
+  }
 
 
 
@@ -25,6 +28,7 @@ const FavJokes = (props) => {
   
     return (
       <div className = {s.favSide}>
+         {!md &&  <div className = {s.showMenu}> <div onClick = {menuClose} className = {s.showMenuBtn}> <img  src={hidden} alt=""></img> </div><h1 className = {s.title}>Favourite</h1></div>}
         <h1 className = {s.title}>Favourite</h1>
         {jokeElements}
       </div>

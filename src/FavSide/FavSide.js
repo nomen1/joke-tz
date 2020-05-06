@@ -1,58 +1,36 @@
 import React from "react";
-import s from  "./FavSide.module.css";
-import FavJokes from "../FavJokes/FavJokes"
-import Media from "react-media"
-import MainSide from "../mainSide/MainSide"
-import useMediaQuery from "./../useMediaQueries"
-
-
-
-
-
-
-
-
-let xsState = s.favSide + " " + s.xsState
-let mState  = s.favSide + " " + s.mState
-let mdState  = s.favSide + " " + s.mdState
-
-
-
-
-
+import s from "./FavSide.module.css";
+import FavJokes from "../FavJokes/FavJokes";
+import useMediaQuery from "./../useMediaQueries";
 
 const FivSide = (props) => {
   const xs = useMediaQuery("(max-width: 599px)");
-  const m =  useMediaQuery("(min-width: 600px) and (max-width: 1199px)");
-  const md =  useMediaQuery("(min-width: 1200px)");
+  const m = useMediaQuery("(min-width: 600px) and (max-width: 1199px)");
+  const md = useMediaQuery("(min-width: 1200px)");
 
+  let xsState = s.favSide + " " + s.xsState;
+  let mState = s.favSide + " " + s.mState;
+  let mdState = s.favSide + " " + s.mdState;
 
-  
   if (props.menuOpened) {
-    xsState = s.favSide + " " + s.openXS
-    mState = s.favSide + " " + s.open
+    xsState = s.favSide + " " + s.openXS;
+    mState = s.favSide + " " + s.openMd;
   }
 
+  let favSideStyle = null;
+  if (xs) {
+    favSideStyle = xsState;
+  } else if (m) {
+    favSideStyle = mState;
+  } else if (md) {
+    favSideStyle = mdState;
+  }
 
-
-
-  return ( 
-
-
-<div>
-  {xs && <div className={xsState }><FavJokes/></div>}
-  {m && <div className={mState }><FavJokes/></div>}
-  {md && <div className={mdState }><FavJokes/></div>}
-</div>
-     
-    
+  return (
+    <div className={favSideStyle}>
+      <FavJokes menuToOpen={props.menuToOpen} />
+    </div>
   );
 };
 
-
-export default FivSide
-
-/*
-<div className={m && mState }>
-<FavJokes/>
-</div>*/
+export default FivSide;

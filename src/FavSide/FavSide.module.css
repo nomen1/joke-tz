@@ -5,14 +5,16 @@
 
 
 .favSide{
+  bottom: 0;
+  height: 100%;
   top: 0;
   right: 0;
   z-index: 200;
   width: 30%;
   background: #F8F8F8;
-  position: absolute;
-  height: 100%;
+  position: fixed;
   transition: transform 0.3s ease-out;
+  overflow: auto;
 
 }
 
@@ -31,7 +33,9 @@
 .openXS{
   width: 100%;
 }
-
+.openMd{
+  width: 60%;
+}
 
 
 @media (min-width: 575.98px){
