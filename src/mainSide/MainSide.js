@@ -19,6 +19,8 @@ const MainSide = () => {
 
   return (
     <div className={s.mainSide}>
+
+      <div className={s.mainSection + " " + (md ? s.full : " ")}>
       {m && (
         <div className={s.showMenu}>
           {" "}
@@ -29,7 +31,6 @@ const MainSide = () => {
           <h1 className={s.title}>Favourite</h1>
         </div>
       )}
-      <div className={s.mainSection + " " + (md ? s.full : " ")}>
         <div className={s.headerArea}>
           <span className={s.sign}>MSI 2020</span>
         </div>

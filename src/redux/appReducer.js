@@ -93,7 +93,7 @@ const appReducer = (state = initialState, action) => {
         case SET_JOKE:{
         let stateCopy = Object.assign({}, state);
         stateCopy.jokes= [...state.jokes];
-        stateCopy.jokes.push(action.joke)
+        stateCopy.jokes.unshift(action.joke)
        return stateCopy
 }
   case SET_CATEGORIES:{ 
@@ -109,7 +109,7 @@ const appReducer = (state = initialState, action) => {
           return JSON.stringify(o)}).includes( JSON.stringify(action.joke))){
             return stateCopy
           }else{
-            stateCopy.favJokes.push(action.joke)
+            stateCopy.favJokes.unshift(action.joke)
             return stateCopy
           }
       

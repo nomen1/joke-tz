@@ -28,8 +28,9 @@ const FavJokes = (props) => {
   
     return (
       <div className = {s.favSide}>
-         {!md &&  <div className = {s.showMenu}> <div onClick = {menuClose} className = {s.showMenuBtn}> <img  src={hidden} alt=""></img> </div><h1 className = {s.title}>Favourite</h1></div>}
-        <h1 className = {s.title}>Favourite</h1>
+        <div className = {s.showMenu}>{!md && <div onClick = {menuClose} className = {s.showMenuBtn}> <img  src={hidden} alt=""></img> </div>}<h1 className = {s.title}>Favourite</h1></div>
+         
+        
         {jokeElements}
       </div>
     );
