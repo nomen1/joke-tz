@@ -1,8 +1,7 @@
 import React from "react";
-import { connect } from "react-redux";
-import s from "./Form.module.css";
-import { Field } from "redux-form";
-import { useEffect } from "react";
+import {connect} from "react-redux";
+import {Field} from "redux-form";
+import {useEffect} from "react";
 import {
   getJokeTC,
   getCategoriesTC,
@@ -10,16 +9,23 @@ import {
   getFreeTextSearchTC
 } from "../redux/appReducer";
 import Form from "./Form";
+import { Category } from "../FormControls/FormControls";
 
-let FormContainer = (props) => {
+const FormContainer = (props) => {
   useEffect(() => {
     props.getCategories();
   }, []);
 
-  let categoriesArr = props.categories.map((c) => {
+  const categoriesArr = props.categories.map((c) => {
     return (
       <div>
-       {c} <Field name="jokeCategory" component="input" type="radio" value={c} /> 
+        <Field
+          name="jokeCategory"
+          component={Category}
+          type="radio"
+          value={c}
+          id={c}
+        />
       </div>
     );
   });
@@ -45,8 +51,8 @@ let mapDispatchToProps = (dispatch) => {
     getRandomFromCategory: (category) => {
       dispatch(getRandomFromCategoryTC(category));
     },
-    getFreeTextSearch: (data) => {
-      dispatch(getFreeTextSearchTC(data));
+    getFreeTextSearch: (keyword) => {
+      dispatch(getFreeTextSearchTC(keyword));
     }
   };
 };

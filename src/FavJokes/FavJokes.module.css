@@ -27,6 +27,7 @@ color: #ABABAB;
 display: flex;
 }
 .showMenuBtn{
+    cursor:pointer;
     display: flex;
     align-self: center;
     margin-right: 5px;

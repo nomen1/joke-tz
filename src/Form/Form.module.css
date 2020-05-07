@@ -1,5 +1,5 @@
 .formBtn{
- color:white;  
+color:white;  
 width: 152px;
 height: 42px;
 background: linear-gradient(92.01deg, #8EA7FF 0%, #7291FF 100%);
@@ -12,4 +12,10 @@ font-weight: bold;
 font-size: 16px;
 line-height: 22px;
 cursor: pointer;
+}
+
+.categoriesArea{
+width: 50%;
+display: flex;
+flex-wrap: wrap;
 }

@@ -1,44 +1,86 @@
-@import url('https://fonts.googleapis.com/css?family=Roboto&display=swap');
-.category{
-  display: block;
-  margin: 5px;
+@import url("https://fonts.googleapis.com/css?family=Roboto&display=swap");
+
+.appContainer {
+  width: 100%;
+  background: #ffffff;
+  position: relative;
 }
 
-
-.mainSide{
-width: 70%;
-background: #FFFFFF;
-}
-.favSide{
-width: 30%;
-background: #F8F8F8;
-}
-.mainSection{
+.mainSection {
   width: 90%;
   margin: 0 auto;
-  background: #FFFFFF;
-  display:flex;
+  background: #ffffff;
+  display: flex;
   flex-direction: column;
 }
-.sign{
-  font-family: Roboto;
-font-style: normal;
-font-weight: bold;
-font-size: 20px;
-line-height: 28px;
-color: #333333;
+.sign {
+  font-weight: bold;
+  font-size: 20px;
+  line-height: 28px;
+  color: #333333;
 }
-.greetingTitle{
-  font-family: Roboto;
-font-style: normal;
-font-weight: bold;
-font-size: 32px;
-line-height: 44px;
+.greetingTitle {
+  font-weight: bold;
+  font-size: 32px;
+  line-height: 44px;
 }
-.greetingSubTitle{
+.greetingSubTitle {
+  font-weight: 500;
+  font-size: 24px;
+  line-height: 44px;
+}
+
+.lgState {
+  width: 50%;
+  margin-left: 50px;
+}
+.sign {
   font-family: Roboto;
-font-style: normal;
-font-weight: 500;
-font-size: 24px;
-line-height: 44px;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 20px;
+  line-height: 28px;
+  color: #333333;
+}
+.showFavSideTitle {
+  display: block;
+  font-family: Roboto;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 20px;
+  line-height: 28px;
+  color: #ababab;
+}
+.greetingTitle {
+  font-family: Roboto;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 32px;
+  line-height: 44px;
+}
+.greetingSubTitle {
+  font-family: Roboto;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 24px;
+  line-height: 44px;
+}
+
+.header {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
+.showFavSide {
+  position: absolute;
+  display: flex;
+  flex-direction: row;
+  right: 2px;
+}
+.showFavSideBtn {
+  cursor:pointer;
+  display: flex;
+  align-self: center;
+  margin-right: 5px;
 }

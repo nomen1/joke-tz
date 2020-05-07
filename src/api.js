@@ -15,7 +15,7 @@ export const jokesAPI = {
     getRandomFromCategory(category){
         return instance.get(`random?category=${category}`)
     },
-    getFreeTextSearch(data){
-        return instance.get(`search?query=${data}`)
+    getFreeTextSearch(keyword){
+        return instance.get(`search?query=${keyword}`)
     }
 }

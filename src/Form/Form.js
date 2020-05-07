@@ -2,6 +2,7 @@ import React from "react";
 import s from "./Form.module.css";
 import { reduxForm, Field } from "redux-form";
 import { useState } from "react";
+import {SearchLine} from "../FormControls/FormControls"
 
 
 const Form = (props) => {
@@ -37,7 +38,7 @@ const Form = (props) => {
         break;
       case "search":
         {
-          props.getFreeTextSearch(formData.searchData);
+          props.getFreeTextSearch(formData.keyword);
         }
         break;
     }
@@ -61,7 +62,7 @@ const SelectJokeForm = (props) => {
   return (
     <form onSubmit={props.handleSubmit} className={s.form}>
       <div>
-        <span>random:</span>
+        
         <Field
           onChange={() => {
             props.deactivateAll(false);
@@ -71,10 +72,11 @@ const SelectJokeForm = (props) => {
           type="radio"
           value="random"
         />
+        <span>Random:</span>
       </div>
 
       <div>
-        <span>from categories:</span>
+        
         <Field
           onChange={() => {
             props.activateCategoriesArea(true, false);
@@ -84,17 +86,16 @@ const SelectJokeForm = (props) => {
           type="radio"
           value="fromCategories"
         />
+        <span>From categories:</span>
       </div>
       {props.shownCategoriesArea && (
-        <div>
-          <span> animal:</span>
-
+        <div className = {s.categoriesArea}>
           {props.categoriesArr}
         </div>
       )}
 
       <div>
-        <span>search:</span>
+        
         <Field
           onChange={() => {
             props.activateSearchArea(true, false);
@@ -104,12 +105,12 @@ const SelectJokeForm = (props) => {
           type="radio"
           value="search"
         />
+        <span>Search:</span>
       </div>
 
       {props.shownSearchArea && (
         <div>
-          <span> search:</span>
-          <Field name="searchData" component="input" />
+          <Field name="keyword" component= {SearchLine} placeholder={"Free text search..."}/>
         </div>
       )}
 

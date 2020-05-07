@@ -56,9 +56,9 @@ export const getJokeTC = () => {
   }
   
 
-  export const getFreeTextSearchTC = (data) =>{
+  export const getFreeTextSearchTC = (keyword) =>{
     return async (dispatch) => {
-      let response = await jokesAPI.getFreeTextSearch(data);
+      let response = await jokesAPI.getFreeTextSearch(keyword);
       let options = response.data.result
       let randomNumber = Math.floor(Math.random() * options.length)
      let result = options[randomNumber]

@@ -12,7 +12,7 @@ const FivSide = (props) => {
   let mState = s.favSide + " " + s.mState;
   let mdState = s.favSide + " " + s.mdState;
 
-  if (props.menuOpened) {
+  if (props.FavSideOpened) {
     xsState = s.favSide + " " + s.openXS;
     mState = s.favSide + " " + s.openMd;
   }
@@ -28,7 +28,7 @@ const FivSide = (props) => {
 
   return (
     <div className={favSideStyle}>
-      <FavJokes menuToOpen={props.menuToOpen} />
+      <FavJokes FavSideToOpen={props.FavSideToOpen} />
     </div>
   );
 };
