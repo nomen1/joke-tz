@@ -1,4 +1,5 @@
 .formBtn{
+    margin-bottom: 20px;
 color:white;  
 width: 152px;
 height: 42px;
@@ -13,9 +14,24 @@ font-size: 16px;
 line-height: 22px;
 cursor: pointer;
 }
+.formBtn:hover{
+  background: #536CC7;
+}
+.formBtn:active{
+    background: #536CC7;
+}  
 
 .categoriesArea{
 width: 50%;
 display: flex;
 flex-wrap: wrap;
+margin-top: 10px;
+margin-bottom: 10px;
+}
+.optionName{
+    font-size: 18px;
+    padding-left: 10px;
+}
+.option{
+    padding-bottom: 10px;
 }

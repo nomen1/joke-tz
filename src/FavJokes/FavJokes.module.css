@@ -25,6 +25,7 @@ color: #ABABAB;
 
 .showMenu{
 display: flex;
+padding-top: 40px;
 }
 .showMenuBtn{
     cursor:pointer;

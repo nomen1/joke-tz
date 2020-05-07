@@ -24,7 +24,10 @@ const App = () => {
   return (
     <div className={s.appContainer}>
       <div className={s.mainSection + " " + (lg ? s.lgState : " ")}>
-      {!lg && (
+      
+        <div className={s.header}>
+          <span className={s.sign}>MSI 2020</span>
+          {!lg && (
         <div className={s.showFavSide}>
           <div onClick={FavSideToOpenHandler} className={s.showFavSideBtn}>
             <img src={hidden} alt="open-button"></img>
@@ -32,8 +35,6 @@ const App = () => {
           <h1 className={s.showFavSideTitle}>Favourite</h1>
         </div>
       )}
-        <div className={s.header}>
-          <span className={s.sign}>MSI 2020</span>
         </div>
         <div className={s.greetingArea}>
           <h1 className={s.greetingTitle}>Hey!</h1>
@@ -44,7 +45,7 @@ const App = () => {
         <FormContainer />
         <Jokes />
       </div>
-      {FavSideOpened && m && <Backdrop />}
+      {FavSideOpened && m && <Backdrop FavSideToOpen={FavSideToOpen}/>}
       <FavSide FavSideOpened={FavSideOpened}FavSideToOpen={FavSideToOpen} />
     </div>
   );

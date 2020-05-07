@@ -5,6 +5,7 @@ import link from "./../../assets/images/link.png"
 import unliked from "./../../assets/images/Vector(2).png"
 import liked from "./../../assets/images/heart.png"
 import message from "./../../assets/images/message1.png"
+import { useState } from "react";
 
 
 const FavJoke = (props) => {
@@ -13,7 +14,10 @@ const FavJoke = (props) => {
     props.deleteFromFav(joke)
   }
 
-  let likedState = true
+
+  let [likedState, setLikedState] = useState(true);
+
+
   let date = props.joke.updated_at
   let lastUpdate = new Date(date);
   let diff = new Date() - lastUpdate ; 
@@ -22,7 +26,7 @@ const FavJoke = (props) => {
   
     return (
       <div className = {s.joke}>
-      <div className = {s.likeBtn} onClick = {()=>{
+      <div className = {s.likeBtn} onMouseEnter = {()=>{ setLikedState(false) }}  onMouseLeave = {()=>{ setLikedState(true) }} onClick = {()=>{
        deleteFromFav(props.joke)
      }}>
        {likedState &&  <img  src={liked} alt=""></img> }

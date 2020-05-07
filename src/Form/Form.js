@@ -3,6 +3,7 @@ import s from "./Form.module.css";
 import { reduxForm, Field } from "redux-form";
 import { useState } from "react";
 import {SearchLine} from "../FormControls/FormControls"
+import Backdrop from "../Backdrop/Backdrop";
 
 
 const Form = (props) => {
@@ -46,6 +47,7 @@ const Form = (props) => {
   return (
     <div>
       <SelectJokeFormContainer
+        resultMessage = {props.resultMessage}
         categoriesArr={props.categoriesArr}
         onSubmit={onSubmit}
         deactivateAll={deactivateAll}
@@ -61,7 +63,7 @@ const Form = (props) => {
 const SelectJokeForm = (props) => {
   return (
     <form onSubmit={props.handleSubmit} className={s.form}>
-      <div>
+      <div className = {s.option}>
         
         <Field
           onChange={() => {
@@ -72,10 +74,10 @@ const SelectJokeForm = (props) => {
           type="radio"
           value="random"
         />
-        <span>Random:</span>
+        <span  className = {s.optionName}>Random:</span>
       </div>
 
-      <div>
+      <div className = {s.option}>
         
         <Field
           onChange={() => {
@@ -86,7 +88,7 @@ const SelectJokeForm = (props) => {
           type="radio"
           value="fromCategories"
         />
-        <span>From categories:</span>
+        <span  className = {s.optionName}>From categories:</span>
       </div>
       {props.shownCategoriesArea && (
         <div className = {s.categoriesArea}>
@@ -94,7 +96,7 @@ const SelectJokeForm = (props) => {
         </div>
       )}
 
-      <div>
+      <div className = {s.option}>
         
         <Field
           onChange={() => {
@@ -105,7 +107,7 @@ const SelectJokeForm = (props) => {
           type="radio"
           value="search"
         />
-        <span>Search:</span>
+        <span className = {s.optionName}>Search:</span>
       </div>
 
       {props.shownSearchArea && (
@@ -116,6 +118,7 @@ const SelectJokeForm = (props) => {
 
       <div>
         <button className={s.formBtn}>Get a joke</button>
+        {props.resultMessage &&  <Backdrop resultMessage = {props.resultMessage}/>}
       </div>
     </form>
   );

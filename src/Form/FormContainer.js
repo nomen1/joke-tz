@@ -35,7 +35,8 @@ const FormContainer = (props) => {
 
 let mapStateToProps = (state) => {
   return {
-    categories: state.app.categories
+    categories: state.app.categories,
+    resultMessage: state.app.resultMessage
   };
 };
 

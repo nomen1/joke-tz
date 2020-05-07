@@ -7,3 +7,56 @@
     top:0;
     left: 0;
 }
+
+.resultMessageState{
+    z-index: 300;
+}
+
+
+.message{
+    color: #ABABAB;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    min-height: 180px;
+    width: 45%;
+    background: #FFFFFF;
+    border: 1px solid #F8F8F8;
+    box-sizing: border-box;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+    margin-top: 20px;
+    margin: 100px auto;
+}
+.messageBtn{
+     margin-bottom: 20px;
+    color:white;  
+    width: 152px;
+    height: 42px;
+    background: linear-gradient(92.01deg, #8EA7FF 0%, #7291FF 100%);
+    border-radius: 10px;
+    outline: none;
+    border: none;
+    font-family: Roboto;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 16px;
+    line-height: 22px;
+    cursor: pointer;
+    width: 45%;
+   
+}
+.messageBtn:hover{
+    background: #536CC7;
+  }
+  .messageBtn:active{
+      background: #536CC7;
+  } 
+.messageText{
+    font-family: Roboto;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 18px;
+    line-height: 22px;
+}

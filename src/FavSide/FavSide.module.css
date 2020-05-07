@@ -37,29 +37,3 @@
   width: 60%;
 }
 
-
-@media (min-width: 575.98px){
-  .Appcontainer {
-    max-width: 575px;
-    margin: auto;
-    padding: 0;
-  }
-}
-
-@media (min-width: 767.98px){
-  .Appcontainer {
-    max-width: 767px;	
-  }
-}
-
-@media (min-width: 991.98px) {
-  .Appcontainer {
-    max-width: 991px;
-  }
-}
-
-@media (min-width: 1199.98px){
-  .Appcontainer {
-    max-width: 1199px;
-  }
-}

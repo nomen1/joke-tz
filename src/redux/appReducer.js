@@ -3,6 +3,7 @@ const SET_JOKE = "SET_JOKE";
 const SET_CATEGORIES = "SET_CATEGORIES";
 const SET_FAV_JOKE = "SET_FAV_JOKE"
 const DELETE_FROM_FAV = "DELETE_FROM_FAV"
+const SET_RESULT_MESSAGE ="SET_RESULT_MESSAGE"
 
 
 export let setJokeAC = (joke) => {
@@ -23,7 +24,11 @@ export let setCategoriesAC = (categories) => {
 
 
 
-
+  export const setResultMessageAC = (value)=>{
+    return {
+      type: SET_RESULT_MESSAGE, value
+    }
+  }
 
 
 export const getJokeTC = () => {
@@ -60,12 +65,17 @@ export const getJokeTC = () => {
     return async (dispatch) => {
       let response = await jokesAPI.getFreeTextSearch(keyword);
       let options = response.data.result
+      if(options.length === 0){
+       
+        dispatch(setResultMessageAC(true))
+      }else{
       let randomNumber = Math.floor(Math.random() * options.length)
      let result = options[randomNumber]
       dispatch(setJokeAC(result)) 
       
   }
   }
+}
   export const  addToFavAC = (joke)=>{
     return {
       type: SET_FAV_JOKE, joke
@@ -83,7 +93,8 @@ export const getJokeTC = () => {
   let initialState = {
      jokes: [],
      categories:[],
-     favJokes:[]
+     favJokes:[],
+     resultMessage:false
   }
 
 
@@ -93,7 +104,7 @@ const appReducer = (state = initialState, action) => {
         case SET_JOKE:{
         let stateCopy = Object.assign({}, state);
         stateCopy.jokes= [...state.jokes];
-        stateCopy.jokes.unshift(action.joke)
+        stateCopy.jokes.push(action.joke)
        return stateCopy
 }
   case SET_CATEGORIES:{ 
@@ -109,7 +120,7 @@ const appReducer = (state = initialState, action) => {
           return JSON.stringify(o)}).includes( JSON.stringify(action.joke))){
             return stateCopy
           }else{
-            stateCopy.favJokes.unshift(action.joke)
+            stateCopy.favJokes.push(action.joke)
             return stateCopy
           }
       
@@ -125,6 +136,11 @@ const appReducer = (state = initialState, action) => {
        })
       return stateCopy
 
+  }
+  case SET_RESULT_MESSAGE :{
+    let stateCopy = Object.assign({}, state);
+    stateCopy.resultMessage = action.value
+    return stateCopy
   }
 
  default:

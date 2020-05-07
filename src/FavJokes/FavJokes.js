@@ -9,9 +9,14 @@ import shown from "./../assets/images/shown.png";
 const FavJokes = (props) => {
   const md = useMediaQuery("(min-width: 1200px)");
 
-  const menuClose = () => {
+  const FavSideToOpenHandler = () => {
     props.FavSideToOpen(false);
   };
+
+
+  
+
+
 
   let jokeElements = props.favJokes.map((j) => {
     return <FavJoke deleteFromFav={props.deleteFromFav} joke={j}></FavJoke>;
@@ -21,7 +26,7 @@ const FavJokes = (props) => {
     <div className={s.favSide}>
       <div className={s.showMenu}>
         {!md && (
-          <div onClick={menuClose} className={s.showMenuBtn}>
+          <div onClick={FavSideToOpenHandler} className={s.showMenuBtn}>
             {" "}
             <img src={shown} alt=""></img>{" "}
           </div>
