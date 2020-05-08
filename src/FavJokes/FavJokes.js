@@ -24,9 +24,9 @@ const FavJokes = (props) => {
 
   return (
     <div className={s.favSide}>
-      <div className={s.showMenu}>
+      <div className={s.showFavSide + " " + (!md ? s.showFavSideXsMState : " ")}>
         {!md && (
-          <div onClick={FavSideToOpenHandler} className={s.showMenuBtn}>
+          <div onClick={FavSideToOpenHandler} className={s.showFavSideBtn}>
             {" "}
             <img src={shown} alt=""></img>{" "}
           </div>

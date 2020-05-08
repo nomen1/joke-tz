@@ -2,7 +2,7 @@ import React from "react";
 import { Link } from 'react-router-dom';
 import s from "./FavJoke.module.css";
 import link from "./../../assets/images/link.png"
-import unliked from "./../../assets/images/Vector(2).png"
+import unliked from "./../../assets/images/unliked.png"
 import liked from "./../../assets/images/heart.png"
 import message from "./../../assets/images/message1.png"
 import { useState } from "react";

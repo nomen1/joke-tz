@@ -1,35 +1,33 @@
-.favSide{
-    display: flex;
-    flex-direction: column;
-    background: #F8F8F8;
-    width: 90%;
-    margin: 0 auto;
+.favSide {
+  display: flex;
+  flex-direction: column;
+  background: #f8f8f8;
+  width: 90%;
+  margin: 0 auto;
+  padding-bottom: 71px;
 }
 
-.title{
- 
-width: 84px;
-height: 28px;
-
-display: block;
-font-family: Roboto;
-font-style: normal;
-font-weight: 500;
-font-size: 20px;
-line-height: 28px;
-
-
-color: #ABABAB;
+.title {
+  display: block;
+  width: 84px;
+  height: 28px;
+  font-weight: 500;
+  font-size: 20px;
+  line-height: 28px;
+  color: #ababab;
 }
 
-
-.showMenu{
-display: flex;
-padding-top: 40px;
+.showFavSide {
+  display: flex;
+  padding-top: 40px;
 }
-.showMenuBtn{
-    cursor:pointer;
-    display: flex;
-    align-self: center;
-    margin-right: 5px;
-  }
+.showFavSideBtn {
+  display: flex;
+  align-self: center;
+  margin-right: 5px;
+  cursor: pointer;
+}
+
+.showFavSideXsMState {
+  align-self: end;
+}

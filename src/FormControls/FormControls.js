@@ -23,3 +23,18 @@ export const Category = ({ input, meta, ...props }) => {
     </div>
   );
 };
+
+export const Option = ({ input, meta, ...props }) => {
+  return (
+    <div>
+      <label className={s.option}>
+        {props.optionName}
+
+        <input className={s.optionInput} id={props.id} {...input} {...props} />
+        <span
+          className={s.radioBtn + " " + (input.checked ? s.checked : " ")}
+        ></span>
+      </label>
+    </div>
+  );
+};

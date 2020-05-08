@@ -1,62 +1,57 @@
-.backdrop{
-    position:fixed;
+.backdrop {
+    position: fixed;
     width: 100%;
     height: 100%;
-    background-color: rgba(0, 0, 0, 0.4);
-    z-index: 100;
-    top:0;
+    top: 0;
     left: 0;
-}
-
-.resultMessageState{
+    z-index: 100;
+    background-color: rgba(0, 0, 0, 0.4);
+  }
+  
+  .resultMessageState {
     z-index: 300;
-}
-
-
-.message{
-    color: #ABABAB;
+  }
+  
+  .message {
     display: flex;
     flex-direction: column;
     justify-content: space-around;
     align-items: center;
-    min-height: 180px;
     width: 45%;
-    background: #FFFFFF;
-    border: 1px solid #F8F8F8;
+    min-height: 180px;
     box-sizing: border-box;
-    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
     border-radius: 10px;
-    margin-top: 20px;
     margin: 100px auto;
-}
-.messageBtn{
-     margin-bottom: 20px;
-    color:white;  
-    width: 152px;
+    border: 1px solid #f8f8f8;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+    background: #ffffff;
+    color: #ababab;
+  }
+  .messageBtn {
+    margin-bottom: 20px;
+    width: 45%;
     height: 42px;
-    background: linear-gradient(92.01deg, #8EA7FF 0%, #7291FF 100%);
     border-radius: 10px;
     outline: none;
     border: none;
-    font-family: Roboto;
-    font-style: normal;
     font-weight: bold;
     font-size: 16px;
     line-height: 22px;
     cursor: pointer;
-    width: 45%;
-   
-}
-.messageBtn:hover{
-    background: #536CC7;
+    color: white;
+    background: linear-gradient(92.01deg, #8ea7ff 0%, #7291ff 100%);
   }
-  .messageBtn:active{
-      background: #536CC7;
-  } 
-.messageText{
+  .messageBtn:hover {
+    background: #536cc7;
+  }
+  .messageBtn:active {
+    background: #536cc7;
+  }
+  .messageText {
     font-family: Roboto;
     font-style: normal;
     font-weight: bold;
     font-size: 18px;
     line-height: 22px;
-}
+  }
+  

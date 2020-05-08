@@ -1,37 +1,40 @@
 .formBtn{
-    margin-bottom: 20px;
-color:white;  
+margin-bottom: 20px;
 width: 152px;
 height: 42px;
 background: linear-gradient(92.01deg, #8EA7FF 0%, #7291FF 100%);
+color:white;
 border-radius: 10px;
 outline: none;
 border: none;
-font-family: Roboto;
-font-style: normal;
 font-weight: bold;
 font-size: 16px;
 line-height: 22px;
 cursor: pointer;
+font-family: Roboto;
+font-style: normal;
+font-weight: bold;
+
 }
 .formBtn:hover{
-  background: #536CC7;
+background: #536CC7;
 }
 .formBtn:active{
-    background: #536CC7;
+background: #536CC7;
 }  
 
 .categoriesArea{
-width: 50%;
 display: flex;
 flex-wrap: wrap;
-margin-top: 10px;
-margin-bottom: 10px;
+width: 55%;
+margin: 10px 0 10px 0;
 }
 .optionName{
-    font-size: 18px;
-    padding-left: 10px;
+font-size: 18px;
+padding-left: 10px;
 }
 .option{
-    padding-bottom: 10px;
+padding-bottom: 10px;
 }
+
+

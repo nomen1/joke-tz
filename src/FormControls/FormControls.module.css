@@ -5,7 +5,7 @@
   box-sizing: border-box;
   border-radius: 10px;
   margin: 10px 0 20px 0;
-  padding: 10px;
+  padding: 7px;
   font-weight: normal;
   font-size: 16px;
   line-height: 22px;
@@ -20,24 +20,23 @@
 }
 
 .category {
-  cursor: pointer;
+  display: block;
+  box-sizing: border-box;
   width: 1px;
   min-width: 85px;
   height: 28px;
-  display: block;
+  text-align: center;
   border: 2px solid #f8f8f8;
-  box-sizing: border-box;
   border-radius: 6px;
   font-weight: 500;
   font-size: 12px;
   line-height: 16px;
   letter-spacing: 2px;
   text-transform: uppercase;
+  margin: 0 10px 10px 0;
+  padding-top: 4px;
+  cursor: pointer;
   color: #ababab;
-  margin-right: 10px;
-  margin-bottom: 10px;
-  text-align: center;
-padding-top: 4px;
 }
 .categoryInput {
   width: 0.1px;
@@ -57,4 +56,55 @@ padding-top: 4px;
   border: 2px solid #f8f8f8;
   box-sizing: border-box;
   border-radius: 6px;
+}
+
+.option {
+  display: block;
+  position: relative;
+  padding-left: 35px;
+  margin-bottom: 12px;
+  cursor: pointer;
+  font-size: 17px;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  font-size: 18px;
+  line-height: 26px;
+}
+
+.optionInput {
+  width: 0.1px;
+  height: 0.1px;
+  opacity: 0;
+  overflow: hidden;
+  position: absolute;
+  z-index: -1;
+}
+
+.radioBtn {
+  position: absolute;
+  top: 0;
+  left: 0;
+  border-radius: 50%;
+  width: 20px;
+  height: 20px;
+  border: 2px solid #ababab;
+}
+.radioBtn:hover {
+  border: 2px solid black;
+}
+
+.checked {
+  border: 2px solid black;
+}
+.checked::after {
+  content: "";
+  position: absolute;
+  top: 5px;
+  left: 5px;
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background: black;
 }

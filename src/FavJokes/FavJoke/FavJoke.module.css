@@ -1,99 +1,79 @@
-.joke{
+.joke {
     position: relative;
-width: 100%;
-min-height: 180px;
-
-
-background: #FFFFFF;
-border: 1px solid #F8F8F8;
-box-sizing: border-box;
-box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
-border-radius: 10px;
-margin-top: 20px;
-        
+    width: 100%;
+    min-height: 180px;
+    box-sizing: border-box;
+    border-radius: 10px;
+    margin-top: 20px;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+    background: #ffffff;
+    border: 1px solid #f8f8f8;
+  }
+  
+  .content {
+    display: flex;
+    flex-direction: row;
+    width: 90%;
+    margin: 0 auto;
+    padding-top: 47px;
+  }
+  .jokeRightSide {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    width: 85%;
+    padding-left: 5px;
 }
-
-
-    .content{
-        display:flex;
-        flex-direction: row;
-        width: 90%;
-        margin: 0 auto;
-        padding-top: 47px;
-    }
-    .jokeRightSide{
-        padding-left: 5px;
-        display: flex;
-        flex-direction: column;
-        justify-content: space-around;
-        width: 85%;
-        
-    }
-    
-    .jokeLeftSide{
+ 
+  
+  .jokeLeftSide {
     width: 15%;
-    }
-    
-    .linkTitle{
-    
-    font-family: Roboto;
-    font-style: normal;
+  }
+  
+  .linkTitle {
     font-weight: 500;
     font-size: 10px;
     line-height: 14px;
-    color: #ABABAB;
-    }
-    
-    .link{
-        font-family: Roboto;
-    font-style: normal;
+    color: #ababab;
+  }
+  
+  .link {
     font-weight: 500;
     font-size: 10px;
     line-height: 14px;
-        color: #8EA7FF;
-        cursor: pointer;
-    }
-    .text{
-        font-family: Roboto;
-        font-style: normal;
-        font-weight: normal;
-        font-size: 14px;
-        line-height: 20px;
-        padding-top: 5px;
-        padding-bottom: 25px;
-    
-    }
-    
-    .jokeFooterInfo{
-        font-family: Roboto;
-    font-style: normal;
+    cursor: pointer;
+    color: #8ea7ff;
+  }
+  .text {
     font-weight: normal;
+    font-size: 14px;
+    line-height: 20px;
+    padding-top: 5px;
+    padding-bottom: 25px;
+  }
+  
+  .jokeFooterInfo {
     font-size: 10px;
     line-height: 14px;
-    color: #ABABAB;
+    color: #ababab;
     padding-right: 3px;
-   
-    
-    }
-    
-    
-    .itemFooter{
+  }
+  
+  .itemFooter {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
     padding-bottom: 20px;
-    }
+  }
   
-    
-    
-    .likeBtn{
-        position: absolute;
-        right: 20px;
+  .likeBtn {
+    position: absolute;
+    right: 20px;
     top: 20px;
     cursor: pointer;
-    }
-
-
-    .messageImg{
-        padding-top: 5px;
-    }
+  }
+  
+  .messageImg {
+    padding-top: 5px;
+  }
+  

@@ -2,7 +2,7 @@ import React from "react";
 import s from "./Form.module.css";
 import { reduxForm, Field } from "redux-form";
 import { useState } from "react";
-import {SearchLine} from "../FormControls/FormControls"
+import {SearchLine, Option} from "../FormControls/FormControls"
 import Backdrop from "../Backdrop/Backdrop";
 
 
@@ -14,6 +14,7 @@ const Form = (props) => {
     showCategoriesArea(value);
     showSearchArea(value1);
   };
+
 
   const activateSearchArea = (value, value1) => {
     showCategoriesArea(value1);
@@ -61,6 +62,7 @@ const Form = (props) => {
 };
 
 const SelectJokeForm = (props) => {
+
   return (
     <form onSubmit={props.handleSubmit} className={s.form}>
       <div className = {s.option}>
@@ -70,11 +72,13 @@ const SelectJokeForm = (props) => {
             props.deactivateAll(false);
           }}
           name="category"
-          component="input"
+          component= {Option}
           type="radio"
           value="random"
+          optionName = "Random"
+         
         />
-        <span  className = {s.optionName}>Random:</span>
+       
       </div>
 
       <div className = {s.option}>
@@ -84,11 +88,12 @@ const SelectJokeForm = (props) => {
             props.activateCategoriesArea(true, false);
           }}
           name="category"
-          component="input"
+          component= {Option}
           type="radio"
           value="fromCategories"
+          optionName = "From categories"
         />
-        <span  className = {s.optionName}>From categories:</span>
+      
       </div>
       {props.shownCategoriesArea && (
         <div className = {s.categoriesArea}>
@@ -103,11 +108,12 @@ const SelectJokeForm = (props) => {
             props.activateSearchArea(true, false);
           }}
           name="category"
-          component="input"
+          component= {Option}
           type="radio"
           value="search"
+          optionName = "Search"
         />
-        <span className = {s.optionName}>Search:</span>
+        
       </div>
 
       {props.shownSearchArea && (

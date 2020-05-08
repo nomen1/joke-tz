@@ -1,17 +1,17 @@
-@import url("https://fonts.googleapis.com/css?family=Roboto&display=swap");
 
 .appContainer {
+  position: relative;
   width: 100%;
   background: #ffffff;
-  position: relative;
 }
 
 .mainSection {
-  width: 90%;
-  margin: 0 auto;
-  background: #ffffff;
   display: flex;
   flex-direction: column;
+  width: 90%;
+  margin: 0 auto;
+  background: inherit;
+  padding-bottom: 71px;
 }
 .sign {
   font-weight: bold;
@@ -32,59 +32,34 @@
   padding-bottom: 43px;
 }
 
-.lgState {
-  width: 45%;
-  margin-left: 140px;
-}
-.sign {
-  font-family: Roboto;
-  font-style: normal;
-  font-weight: bold;
-  font-size: 20px;
-  line-height: 28px;
-  color: #333333;
-}
 .showFavSideTitle {
-  display: block;
-  font-family: Roboto;
-  font-style: normal;
   font-weight: 500;
   font-size: 20px;
   line-height: 28px;
   color: #ababab;
 }
-.greetingTitle {
-  font-family: Roboto;
-  font-style: normal;
-  font-weight: bold;
-  font-size: 32px;
-  line-height: 44px;
-}
-.greetingSubTitle {
-  font-family: Roboto;
-  font-style: normal;
-  font-weight: 500;
-  font-size: 24px;
-  line-height: 44px;
-}
 
 .header {
-  padding-top:40px;
-  padding-bottom: 78px;
   display: flex;
   flex-direction: row;
   justify-content: space-between;
   align-items: center;
+  padding-top:40px;
+  padding-bottom: 78px;
 }
 .showFavSide {
-  
   display: flex;
   flex-direction: row;
   
 }
 .showFavSideBtn {
-  cursor:pointer;
   display: flex;
   align-self: center;
   margin-right: 5px;
+  cursor:pointer;
+}
+
+.lgState {
+  width: 45%;
+  margin-left: 140px;
 }

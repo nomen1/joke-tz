@@ -66,7 +66,6 @@ export const getJokeTC = () => {
       let response = await jokesAPI.getFreeTextSearch(keyword);
       let options = response.data.result
       if(options.length === 0){
-       
         dispatch(setResultMessageAC(true))
       }else{
       let randomNumber = Math.floor(Math.random() * options.length)
