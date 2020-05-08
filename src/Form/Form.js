@@ -75,7 +75,7 @@ const SelectJokeForm = (props) => {
           component= {Option}
           type="radio"
           value="random"
-          optionName = "Random"
+          optionname = "Random"
          
         />
        
@@ -91,7 +91,7 @@ const SelectJokeForm = (props) => {
           component= {Option}
           type="radio"
           value="fromCategories"
-          optionName = "From categories"
+          optionname = "From categories"
         />
       
       </div>
@@ -111,7 +111,7 @@ const SelectJokeForm = (props) => {
           component= {Option}
           type="radio"
           value="search"
-          optionName = "Search"
+          optionname = "Search"
         />
         
       </div>

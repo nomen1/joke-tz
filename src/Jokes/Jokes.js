@@ -6,7 +6,7 @@ import Joke from "./Joke/Joke";
 const Jokes = (props) => {
   let JokesItems = props.jokes.map((j) => {
     return (
-      <Joke wholeJoke={j} updated_at={j.updated_at} addToFav={props.addToFav} />
+      <Joke wholeJoke={j} updated_at={j.updated_at} addToFav={props.addToFav}/>
     );
   });
 

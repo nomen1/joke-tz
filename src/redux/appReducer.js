@@ -114,7 +114,7 @@ const appReducer = (state = initialState, action) => {
   }
   case SET_FAV_JOKE:{
     let stateCopy = Object.assign({}, state);
-    stateCopy.favJokes= [...state. favJokes];
+    stateCopy.favJokes= [...state.favJokes];
     if(state.favJokes.map((o)=>{
           return JSON.stringify(o)}).includes( JSON.stringify(action.joke))){
             return stateCopy

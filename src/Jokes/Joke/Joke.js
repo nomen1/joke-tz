@@ -9,6 +9,7 @@ import liked from "./../../assets/images/heart.png";
 import useMediaQuery from "./../../useMediaQueries";
 
 const Joke = (props) => {
+  console.log(props.wholeJoke.url)
   const xs = useMediaQuery("(max-width: 599px)");
   let [likedState, setLikedState] = useState(false);
 
@@ -46,9 +47,10 @@ const Joke = (props) => {
         <div className={s.jokeRightSide}>
           <div>
             <span className={s.linkTitle}>ID:</span>{" "}
-            <Link className={s.link} to={props.wholeJoke.link}>
+            <a className={s.link} href = {props.wholeJoke.url}>
               {props.wholeJoke.id}
-            </Link>{" "}
+          
+            </a>
             <img src={link} alt=""></img>{" "}
           </div>
           <span className={s.text}>{props.wholeJoke.value}</span>

@@ -28,7 +28,7 @@ export const Option = ({ input, meta, ...props }) => {
   return (
     <div>
       <label className={s.option}>
-        {props.optionName}
+        {props.optionname}
 
         <input className={s.optionInput} id={props.id} {...input} {...props} />
         <span

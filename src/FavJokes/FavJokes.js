@@ -19,7 +19,7 @@ const FavJokes = (props) => {
 
 
   let jokeElements = props.favJokes.map((j) => {
-    return <FavJoke deleteFromFav={props.deleteFromFav} joke={j}></FavJoke>;
+    return <FavJoke deleteFromFav={props.deleteFromFav} joke={j} ></FavJoke>;
   });
 
   return (
