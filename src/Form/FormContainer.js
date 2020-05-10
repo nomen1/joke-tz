@@ -16,7 +16,7 @@ const FormContainer = (props) => {
     props.getCategories();
   }, []);
 
-  const categoriesArr = props.categories.map((c) => {
+  const categoriesArr = props.categories.map((c, key) => {
     return (
       <div>
         <Field
@@ -24,7 +24,7 @@ const FormContainer = (props) => {
           component={Category}
           type="radio"
           value={c}
-          id={c}
+          key = {key}
         />
       </div>
     );
@@ -33,14 +33,14 @@ const FormContainer = (props) => {
   return <Form categoriesArr={categoriesArr} {...props} />;
 };
 
-let mapStateToProps = (state) => {
+const mapStateToProps = (state) => {
   return {
     categories: state.app.categories,
     resultMessage: state.app.resultMessage
   };
 };
 
-let mapDispatchToProps = (dispatch) => {
+const mapDispatchToProps = (dispatch) => {
   return {
     getRandomJoke: () => {
       dispatch(getJokeTC());

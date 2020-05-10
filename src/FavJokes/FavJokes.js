@@ -18,8 +18,8 @@ const FavJokes = (props) => {
 
 
 
-  let jokeElements = props.favJokes.map((j) => {
-    return <FavJoke deleteFromFav={props.deleteFromFav} joke={j} ></FavJoke>;
+  const jokeElements = props.favJokes.map((j, key) => {
+    return <FavJoke deleteFromFav={props.deleteFromFav} wholeJoke={j} key={key}></FavJoke>;
   });
 
   return (
@@ -39,13 +39,13 @@ const FavJokes = (props) => {
   );
 };
 
-let mapStateToProps = (state) => {
+const mapStateToProps = (state) => {
   return {
     favJokes: state.app.favJokes
   };
 };
 
-let mapDispatchToProps = (dispatch) => {
+const mapDispatchToProps = (dispatch) => {
   return {
     deleteFromFav: (joke) => {
       dispatch(deleteFromFavAC(joke));

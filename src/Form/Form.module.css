@@ -21,6 +21,8 @@ background: #536CC7;
 }
 .formBtn:active{
 background: #536CC7;
+font-size: 17px;
+transition: 0.2s;
 }  
 
 .categoriesArea{

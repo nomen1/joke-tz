@@ -13,13 +13,12 @@ export const Category = ({ input, meta, ...props }) => {
   return (
     <div className={s.formsControl}>
       <label
-        className={s.category + " " + (input.checked ? s.active : " ")}
-        htmlFor={props.id}
+        className={s.category + " " + (input.checked ? s.active : " ")}   
       >
+         <input className={s.categoryInput} id={props.id} {...input} {...props} />
         {input.value}
       </label>
-      <input className={s.categoryInput} id={props.id} {...input} {...props} />
-      <span></span>
+     
     </div>
   );
 };

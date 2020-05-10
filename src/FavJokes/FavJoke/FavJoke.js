@@ -1,5 +1,4 @@
 import React from "react";
-import { Link } from 'react-router-dom';
 import s from "./FavJoke.module.css";
 import link from "./../../assets/images/link.png"
 import unliked from "./../../assets/images/unliked.png"
@@ -15,19 +14,17 @@ const FavJoke = (props) => {
   }
 
 
-  let [likedState, setLikedState] = useState(true);
+  const [likedState, setLikedState] = useState(true);
+  const lastUpdate = new Date( props.wholeJoke.updated_at);
+  const hours = Math.floor((new Date() - lastUpdate) / 3600000);
 
 
-  let date = props.joke.updated_at
-  let lastUpdate = new Date(date);
-  let diff = new Date() - lastUpdate ; 
-  let hours =  Math.floor(diff/3600000)
 
   
     return (
       <div className = {s.joke}>
       <div className = {s.likeBtn} onMouseEnter = {()=>{ setLikedState(false) }}  onMouseLeave = {()=>{ setLikedState(true) }} onClick = {()=>{
-       deleteFromFav(props.joke)
+       deleteFromFav(props.wholeJoke)
      }}>
        {likedState &&  <img  src={liked} alt=""></img> }
        {!likedState &&  <img  src={unliked} alt=""></img> }
@@ -37,13 +34,18 @@ const FavJoke = (props) => {
   <div className = {s.messageImg}><img  src={message} alt=""></img></div>
       </div>
       <div className = {s.jokeRightSide}>
-      <div><span className = {s.linkTitle}>ID:</span> <Link className = {s.link} to={props.joke.link}>{props.joke.id}</Link> <img  src={link} alt=""></img> </div>
-      <span className = {s.text}>{props.joke.value}</span>
+      <div><span className = {s.linkTitle}>ID:</span> 
+      <a className={s.link} href = {props.wholeJoke.url}>
+              {props.wholeJoke.id}
+              <img className = {s.linkImg} src={link} alt=""></img>
+            </a>
+      
+        </div>
+      <span className = {s.text}>{props.wholeJoke.value}</span>
       <div className = {s.itemFooter}>
-      <div><span className = {s.jokeFooterInfo} >Last update:</span><span className = {s.jokeFooterInfo}>{hours + " " + "hours ago"}</span></div>
+      <div><span className = {s.jokeFooterInfo} >Last update:</span><span className = {s.jokeFooterInfo}>{hours + " hours ago"}</span></div>
       
       </div>
-  
       </div>
       </div>
       

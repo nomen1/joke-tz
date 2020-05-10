@@ -6,8 +6,7 @@ const DELETE_FROM_FAV = "DELETE_FROM_FAV"
 const SET_RESULT_MESSAGE ="SET_RESULT_MESSAGE"
 
 
-export let setJokeAC = (joke) => {
-  
+export const setJokeAC = (joke) => {
   return {
     type: SET_JOKE, joke
   };
@@ -15,7 +14,7 @@ export let setJokeAC = (joke) => {
 
 
 
-export let setCategoriesAC = (categories) => {
+export const setCategoriesAC = (categories) => {
     return {
       type: SET_CATEGORIES, categories
     };
@@ -35,7 +34,6 @@ export const getJokeTC = () => {
     return async (dispatch) => {
       let response = await jokesAPI.getRandomJoke();
       if(response.status === 200){
-          console.log(response)
         dispatch(setJokeAC(response.data))
     }
       
@@ -64,12 +62,11 @@ export const getJokeTC = () => {
   export const getFreeTextSearchTC = (keyword) =>{
     return async (dispatch) => {
       let response = await jokesAPI.getFreeTextSearch(keyword);
-      let options = response.data.result
-      if(options.length === 0){
+      if( response.data.result.length === 0){
         dispatch(setResultMessageAC(true))
       }else{
-      let randomNumber = Math.floor(Math.random() * options.length)
-     let result = options[randomNumber]
+      Math.floor(Math.random() *  response.data.result.length)
+     let result =  response.data.result[ Math.floor(Math.random() *  response.data.result.length)]
       dispatch(setJokeAC(result)) 
       
   }
@@ -88,11 +85,25 @@ export const getJokeTC = () => {
   }
 
 
+const loadFromLocalStorage = () => {
+  try {
+    const serializedState = localStorage.getItem("state");
+    if (serializedState === null) return [];
+    return JSON.parse(serializedState);
+  } catch (e) {
+    console.log(e);
+    return [];
+  }
+};
 
-  let initialState = {
+
+  const persistedState = loadFromLocalStorage();
+
+
+  const initialState = {
      jokes: [],
      categories:[],
-     favJokes:[],
+     favJokes: persistedState,
      resultMessage:false
   }
 
@@ -101,19 +112,19 @@ export const getJokeTC = () => {
 const appReducer = (state = initialState, action) => {
     switch(action.type){
         case SET_JOKE:{
-        let stateCopy = Object.assign({}, state);
+        const stateCopy = Object.assign({}, state);
         stateCopy.jokes= [...state.jokes];
         stateCopy.jokes.push(action.joke)
        return stateCopy
 }
   case SET_CATEGORIES:{ 
-    let stateCopy = Object.assign({}, state);
+    const stateCopy = Object.assign({}, state);
     stateCopy.categories= [...state.categories];
     stateCopy.categories = action.categories
     return stateCopy
   }
   case SET_FAV_JOKE:{
-    let stateCopy = Object.assign({}, state);
+    const stateCopy = Object.assign({}, state);
     stateCopy.favJokes= [...state.favJokes];
     if(state.favJokes.map((o)=>{
           return JSON.stringify(o)}).includes( JSON.stringify(action.joke))){
@@ -125,8 +136,7 @@ const appReducer = (state = initialState, action) => {
       
   }
   case  DELETE_FROM_FAV :{
-    let stateCopy = Object.assign({}, state);
-
+    const stateCopy = Object.assign({}, state);
     stateCopy.favJokes =  state.favJokes.map((o)=>{
       return JSON.stringify(o)}).filter( (ob) =>{
         return ob !== JSON.stringify(action.joke)
@@ -137,7 +147,7 @@ const appReducer = (state = initialState, action) => {
 
   }
   case SET_RESULT_MESSAGE :{
-    let stateCopy = Object.assign({}, state);
+    const stateCopy = Object.assign({}, state);
     stateCopy.resultMessage = action.value
     return stateCopy
   }

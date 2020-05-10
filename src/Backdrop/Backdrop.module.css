@@ -46,6 +46,8 @@
   }
   .messageBtn:active {
     background: #536cc7;
+    font-size: 17px;
+    transition: 0.2s;
   }
   .messageText {
     font-family: Roboto;

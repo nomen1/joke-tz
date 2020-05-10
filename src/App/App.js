@@ -13,7 +13,7 @@ const App = () => {
   const m = useMediaQuery("(min-width: 600px) and (max-width: 1199px)");
   const lg = useMediaQuery("(min-width: 1200px)");
   
-  let [FavSideOpened, FavSideToOpen] = useState(false);
+  const [FavSideOpened, FavSideToOpen] = useState(false);
 
   const FavSideToOpenHandler = () => {
     FavSideToOpen(true);

@@ -3,7 +3,25 @@ import appReducer from "./appReducer";
 import thunkMiddleware from "redux-thunk";
 import { reducer as formReducer } from "redux-form";
 
-const saveToLocalStorage = (state) => {
+
+
+const reducers = combineReducers({
+  app: appReducer,
+  form: formReducer
+});
+
+
+
+const store = createStore(
+  reducers,
+  applyMiddleware(thunkMiddleware)
+);
+
+
+
+
+
+export const saveToLocalStorage = (state) => {
   try {
     const serializedState = JSON.stringify(state);
     localStorage.setItem("state", serializedState);
@@ -12,30 +30,5 @@ const saveToLocalStorage = (state) => {
   }
 };
 
-const loadFromLocalStorage = () => {
-  try {
-    const serializedState = localStorage.getItem("state");
-    if (serializedState === null) return undefined;
-    return JSON.parse(serializedState);
-  } catch (e) {
-    console.log(e);
-    return undefined;
-  }
-};
-
-const reducers = combineReducers({
-  app: appReducer,
-  form: formReducer
-});
-
-const persistedState = loadFromLocalStorage();
-
-const store = createStore(
-  reducers,
-  persistedState,
-  applyMiddleware(thunkMiddleware)
-);
-
-store.subscribe(() => saveToLocalStorage(store.getState()));
-
+store.subscribe(() => saveToLocalStorage(store.getState().app.favJokes));
 export default store;

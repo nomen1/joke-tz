@@ -7,8 +7,8 @@ import Backdrop from "../Backdrop/Backdrop";
 
 
 const Form = (props) => {
-  let [shownCategoriesArea, showCategoriesArea] = useState(false);
-  let [shownSearchArea, showSearchArea] = useState(false);
+  const [shownCategoriesArea, showCategoriesArea] = useState(false);
+  const [shownSearchArea, showSearchArea] = useState(false);
 
   const activateCategoriesArea = (value, value1) => {
     showCategoriesArea(value);
@@ -26,23 +26,24 @@ const Form = (props) => {
     showSearchArea(value);
   };
 
-  let onSubmit = (formData) => {
+  const onSubmit = (formData) => {
     switch (formData.category) {
       case "random":
-        {
+        
           props.getRandomJoke();
-        }
+        
         break;
       case "fromCategories":
-        {
+        
           props.getRandomFromCategory(formData.jokeCategory);
-        }
+        
         break;
       case "search":
-        {
+        
           props.getFreeTextSearch(formData.keyword);
-        }
+        
         break;
+        default: console.log("error")
     }
   };
   return (
@@ -130,7 +131,7 @@ const SelectJokeForm = (props) => {
   );
 };
 
-let SelectJokeFormContainer = reduxForm({
+const SelectJokeFormContainer = reduxForm({
   form: "selectJoke"
 })(SelectJokeForm);
 

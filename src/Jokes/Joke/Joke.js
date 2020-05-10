@@ -1,5 +1,4 @@
 import React from "react";
-import {Link} from "react-router-dom";
 import s from "./Joke.module.css";
 import {useState} from "react";
 import message from "./../../assets/images/message.png";
@@ -9,16 +8,11 @@ import liked from "./../../assets/images/heart.png";
 import useMediaQuery from "./../../useMediaQueries";
 
 const Joke = (props) => {
-  console.log(props.wholeJoke.url)
   const xs = useMediaQuery("(max-width: 599px)");
-  let [likedState, setLikedState] = useState(false);
-
-
-  let date = props.updated_at;
-  let lastUpdate = new Date(date);
-  let diff = new Date() - lastUpdate;
-  let hours = Math.floor(diff / 3600000);
-  let addToFav = (joke) => {
+  const [likedState, setLikedState] = useState(false);
+  const lastUpdate = new Date(props.updated_at);
+  const hours = Math.floor((new Date() - lastUpdate) / 3600000);
+  const addToFav = (joke) => {
     if (likedState) {
       setLikedState(false);
     } else {
@@ -46,18 +40,18 @@ const Joke = (props) => {
         </div>
         <div className={s.jokeRightSide}>
           <div>
-            <span className={s.linkTitle}>ID:</span>{" "}
+            <span className={s.linkTitle}>ID:</span>
             <a className={s.link} href = {props.wholeJoke.url}>
               {props.wholeJoke.id}
-          
+              <img className = {s.linkImg} src={link} alt=""></img>
             </a>
-            <img src={link} alt=""></img>{" "}
+            
           </div>
           <span className={s.text}>{props.wholeJoke.value}</span>
           <div className={s.itemFooter + " " + (xs ? s.footerXs : " ")}>
             <div>
               <span className={s.footerInfo}>Last update:</span>
-              <span className={s.footerInfo}>{hours + " " + "hours ago"}</span>
+              <span className={s.footerInfo}>{hours + " hours ago"}</span>
             </div>
             <div className={s.category}>
               <span className={s.categoryName}>

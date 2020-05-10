@@ -36,8 +36,12 @@
     font-weight: 500;
     font-size: 10px;
     line-height: 14px;
+    padding-left: 3px;
     color: #8ea7ff;
     cursor: pointer;
+  }
+  .linkImg{
+    padding-left: 6px;
   }
   .text {
     padding: 5px 0 25px 0;
