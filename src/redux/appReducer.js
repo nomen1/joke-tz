@@ -119,7 +119,6 @@ const appReducer = (state = initialState, action) => {
 }
   case SET_CATEGORIES:{ 
     const stateCopy = Object.assign({}, state);
-    stateCopy.categories= [...state.categories];
     stateCopy.categories = action.categories
     return stateCopy
   }
