@@ -7,8 +7,8 @@ import useMediaQuery from "./../useMediaQueries";
 import shown from "./../assets/images/shown.png";
 
 const FavJokes = (props) => {
-  const md = useMediaQuery("(min-width: 1200px)");
 
+  const md = useMediaQuery("(min-width: 1200px)");
   const FavSideToOpenHandler = () => {
     props.FavSideToOpen(false);
   };
@@ -27,9 +27,9 @@ const FavJokes = (props) => {
       <div className={s.showFavSide + " " + (!md ? s.showFavSideXsMState : " ")}>
         {!md && (
           <div onClick={FavSideToOpenHandler} className={s.showFavSideBtn}>
-            {" "}
-            <img src={shown} alt=""></img>{" "}
-          </div>
+            <div className={s.BtnIcon}></div>
+            <div className={s.BtnIcon}></div>
+         </div>
         )}
         <h1 className={s.title}>Favourite</h1>
       </div>

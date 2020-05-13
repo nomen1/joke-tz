@@ -6,7 +6,7 @@ import Jokes from "../Jokes/Jokes";
 import {useState} from "react";
 import FavSide from "../FavSide/FavSide";
 import Backdrop from "../Backdrop/Backdrop";
-import hidden from "./../assets/images/hidden.png";
+
 
 
 const App = () => {
@@ -27,7 +27,10 @@ const App = () => {
           {!lg && (
         <div className={s.showFavSide}>
           <div onClick={FavSideToOpenHandler} className={s.showFavSideBtn}>
-            <img src={hidden} alt="to-open-button"></img>
+          
+           <div className={s.BtnIcon}></div>
+           <div className={s.BtnIcon}></div>
+
           </div>
           <h1 className={s.showFavSideTitle}>Favourite</h1>
         </div>
