@@ -6,7 +6,7 @@
 
 Stack:
 
-React.js
+<li>React.js<li>
 Redux
 Redux-thunk
 Redux-form
