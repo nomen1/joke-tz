@@ -6,8 +6,8 @@
 
 Stack:
 
-<li>React.js<li>
-Redux
-Redux-thunk
-Redux-form
-Axios
+<li>React.js</li>
+<li>Redux</li>
+<li>Redux-thunk</li>
+<li>Redux-form</li>
+<li>Axios</li>
