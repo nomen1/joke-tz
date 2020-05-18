@@ -115,7 +115,6 @@ const appReducer = (state = initialState, action) => {
       if (state.favJokes.some((item) => item.id === action.joke.id)) {
         return {
           ...state,
-          favJokes: [...state.jokes]
         };
       }
       return {
