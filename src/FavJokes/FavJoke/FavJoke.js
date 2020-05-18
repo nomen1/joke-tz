@@ -24,7 +24,7 @@ const FavJoke = (props) => {
     return (
       <div className = {s.joke}>
       <div className = {s.likeBtn} onMouseEnter = {()=>{ setLikedState(false) }}  onMouseLeave = {()=>{ setLikedState(true) }} onClick = {()=>{
-       deleteFromFav(props.wholeJoke)
+       deleteFromFav(props.wholeJoke.id)
      }}>
        {likedState &&  <img  src={liked} alt=""></img> }
        {!likedState &&  <img  src={unliked} alt=""></img> }

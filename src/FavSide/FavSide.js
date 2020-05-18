@@ -1,6 +1,6 @@
 import React from "react";
 import s from "./FavSide.module.css";
-import FavJokes from "../FavJokes/FavJokes";
+import FavJokes from "../FavJokes/FavJokesContainer";
 import useMediaQuery from "./../useMediaQueries";
 
 const FivSide = (props) => {

@@ -1,10 +1,8 @@
 import React from "react";
 import s from "./FavJokes.module.css";
 import FavJoke from "../FavJokes/FavJoke/FavJoke";
-import { deleteFromFavAC } from "../redux/appReducer";
-import { connect } from "react-redux";
 import useMediaQuery from "./../useMediaQueries";
-import shown from "./../assets/images/shown.png";
+
 
 const FavJokes = (props) => {
 
@@ -39,18 +37,5 @@ const FavJokes = (props) => {
   );
 };
 
-const mapStateToProps = (state) => {
-  return {
-    favJokes: state.app.favJokes
-  };
-};
 
-const mapDispatchToProps = (dispatch) => {
-  return {
-    deleteFromFav: (joke) => {
-      dispatch(deleteFromFavAC(joke));
-    }
-  };
-};
-
-export default connect(mapStateToProps, mapDispatchToProps)(FavJokes);
+export default FavJokes

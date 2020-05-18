@@ -1,13 +1,14 @@
 import React from "react";
-import s from "./Backdrop.module.css";
+import s from "./Background.module.css";
 import { setResultMessageAC } from "../redux/appReducer";
 import { connect } from "react-redux";
 
-const Backdrop = (props) => {
+const Background = (props) => {
+  
   return (
     <div
       className={
-        s.backdrop + " " + (props.resultMessage ? s.resultMessageState : " ")
+        s.background + " " + (props.resultMessage ? s.resultMessageState : " ")
       }
     >
       {props.resultMessage && (
@@ -27,18 +28,6 @@ const Backdrop = (props) => {
   );
 };
 
-let mapStateToProps = (state) => {
-  return {
-    resultMessage: state.app.resultMessage
-  };
-};
 
-let mapDispatchToProps = (dispatch) => {
-  return {
-    closeMessageWindow: (value) => {
-      dispatch(setResultMessageAC(value));
-    }
-  };
-};
 
-export default connect(mapStateToProps, mapDispatchToProps)(Backdrop);
+export default Background

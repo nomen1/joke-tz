@@ -3,7 +3,7 @@ import s from "./Form.module.css";
 import { reduxForm, Field } from "redux-form";
 import { useState } from "react";
 import {SearchLine, Option} from "../FormControls/FormControls"
-import Backdrop from "../Backdrop/Backdrop";
+import Background from "../Background/BackgroundContainer";
 
 
 const Form = (props) => {
@@ -125,7 +125,7 @@ const SelectJokeForm = (props) => {
 
       <div>
         <button className={s.formBtn}>Get a joke</button>
-        {props.resultMessage &&  <Backdrop resultMessage = {props.resultMessage}/>}
+        {props.resultMessage &&  <Background resultMessage = {props.resultMessage}/>}
       </div>
     </form>
   );

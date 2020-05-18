@@ -1,11 +1,11 @@
 import React from "react";
 import s from "./App.module.css";
 import useMediaQuery from "./../useMediaQueries";
-import FormContainer from "./../Form/FormContainer";
-import Jokes from "../Jokes/Jokes";
+import Form from "./../Form/FormContainer";
+import Jokes from "../Jokes/JokesContainer";
 import {useState} from "react";
 import FavSide from "../FavSide/FavSide";
-import Backdrop from "../Backdrop/Backdrop";
+import Background from "../Background/BackgroundContainer";
 
 
 
@@ -42,10 +42,10 @@ const App = () => {
             Let’s try to find a joke for you:
           </h2>
         </div>
-        <FormContainer />
+        <Form />
         <Jokes />
       </div>
-      {FavSideOpened && m && <Backdrop FavSideToOpen={FavSideToOpen}/>}
+      {FavSideOpened && m && <Background FavSideToOpen={FavSideToOpen}/>}
       <FavSide FavSideOpened={FavSideOpened}FavSideToOpen={FavSideToOpen} />
     </div>
   );
